@@ -1,42 +1,11 @@
 import React, { useState } from "react";
-import { Calendar, Users, Music, Camera, X } from "lucide-react";
+import eventVideo from "../assests/videos/video1.mp4"; 
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const featuredEvents = [
-    {
-      image: "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?auto=format&fit=crop&q=80",
-      title: "Club Parties",
-      description: "Memorable social events and parties",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80",
-      title: "Outdoor Festivals",
-      description: "Vibrant outdoor celebrations",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-      title: "Corporate Events",
-      description: "Professional events for business excellence",
-    }
-  ];
-
-  const previousEvents = [
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1496337589254-7e19d01cec44?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80",
-  ];
-
   return (
-    <div>
+    <div className="bg-black text-white">
       {/* Hero Section */}
       <div
         className="relative h-[600px] bg-cover bg-center fade-up"
@@ -45,14 +14,18 @@ const Home = () => {
             'url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80")',
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 bg-black bg-opacity-70" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
-          <div className="text-white text-center">
-            <h1 className="text-6xl font-bold mb-4">Experience the Unthinkable.</h1>
-            <p className="text-xl mb-8">Your premier partner in crafting extraordinary experiences</p>
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-gradient">
+              Experience the Unthinkable.
+            </h1>
+            <p className="text-xl mb-8">
+              Your premier partner in crafting extraordinary experiences
+            </p>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition"
+              className="bg-black text-gradient px-8 py-3 rounded-lg hover:bg-black transition font-semibold"
             >
               Get Started
             </button>
@@ -60,116 +33,109 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Previous Events Section */}
-      <div className="overflow-hidden py-8 bg-gray-50 fade-up">
-        <h2 className="text-3xl font-bold text-center mb-6">Previous Events</h2>
-        <div className="relative">
-          <div className="absolute inset-0 bg-white bg-opacity-50" />
-          <div className="flex animate-infinite-scroll">
-            {previousEvents.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Previous event ${index}`}
-                className="w-1/4 object-cover rounded-lg mr-6"
-                style={{
-                  height: "200px",
-                  width: "auto",
-                  animation: "scroll 30s linear infinite", // Add animation
-                }}
-              />
-            ))}
-            {/* Repeat the images at the end to create the seamless effect */}
-            {previousEvents.map((image, index) => (
-              <img
-                key={`repeat-${index}`}
-                src={image}
-                alt={`Repeated event ${index}`}
-                className="w-1/4 object-cover rounded-lg mr-6"
-                style={{
-                  height: "200px",
-                  width: "auto",
-                  animation: "scroll 10s linear infinite", // Ensure the repeat images are included in the same animation
-                }}
-              />
-            ))}
+      {/* Video Section */}
+      <div className="relative h-[600px] fade-up">
+        <video 
+          className="absolute inset-0 w-full h-full object-cover" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src={eventVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black bg-opacity-70" />
+        <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-gradient">
+              Launch Event Video Heading
+            </h1>
+            <p className="text-xl mb-8 text-gradient">Tagline for the launch</p>
           </div>
         </div>
       </div>
 
-      {/* Featured Events Section */}
-      <div className="py-16 bg-gray-50 fade-up">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Events</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredEvents.map((event, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                  <p className="text-gray-600">{event.description}</p>
-                </div>
-              </div>
-            ))}
+      {/* Previous Events Video Section */}
+      <div className="relative h-[600px] fade-up">
+        <video 
+          className="absolute inset-0 w-full h-full object-cover" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src={eventVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black bg-opacity-70" />
+        <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4 text-gradient">
+              Relive the Best Moments
+            </h1>
+            <p className="text-xl mb-8 text-gradient">Experience the highlights from past events</p>
           </div>
         </div>
       </div>
 
-      {/* Services Section */}
-      <div className="py-16 bg-gray-50 fade-up">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ServiceCard
-              icon={<Calendar className="h-8 w-8" />}
-              title="Event Planning"
-              description="Comprehensive event planning and coordination services"
-            />
-            <ServiceCard
-              icon={<Users className="h-8 w-8" />}
-              title="Venue Management"
-              description="Perfect venues for any occasion or celebration"
-            />
-            <ServiceCard
-              icon={<Music className="h-8 w-8" />}
-              title="Entertainment"
-              description="Top-tier entertainment and music services"
-            />
-            <ServiceCard
-              icon={<Camera className="h-8 w-8" />}
-              title="Promotions"
-              description="Professional photography and videography"
-            />
+      {/* Achievements Section */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-gradient">
+            Our Achievements
+          </h2>
+          <div className="flex justify-around items-center flex-wrap">
+            <div className="text-center mb-6 sm:mb-0">
+              <h3 className="text-2xl font-semibold mb-2 text-gradient">
+                10+ Team Members
+              </h3>
+              <p className="text-white sm:text-sm">
+                A dedicated team working together to bring events to life.
+              </p>
+            </div>
+            <div className="text-center mb-6 sm:mb-0">
+              <h3 className="text-2xl font-semibold mb-2 text-gradient">
+                5+ Successful Events
+              </h3>
+              <p className="text-white sm:text-sm">
+                A proven track record of delivering top-quality events.
+              </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold mb-2 text-gradient">
+                1500+ Happy Customers
+              </h3>
+              <p className="text-white sm:text-sm">
+                Our clients are at the heart of everything we do.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Pop-up Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
-          <div className="bg-white rounded-lg p-8 shadow-lg text-center w-[90%] md:w-[400px]">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 fade-up">
+          <div className="bg-black border border-yellow-500 rounded-lg p-8 shadow-lg text-center w-[90%] md:w-[400px]">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              className="absolute top-4 right-4 text-yellow-500 hover:text-yellow-400 transition"
             >
-              <X className="h-6 w-6" />
+              ✖
             </button>
-            <h2 className="text-2xl font-bold mb-4">Join Our Community</h2>
-            <p className="text-gray-600 mb-6">Be the chosen ones!</p>
+            <h2 className="text-2xl font-bold mb-4 text-gradient">
+              Join Our Community
+            </h2>
+            <p className="text-white mb-6">Be the chosen ones!</p>
             <div className="flex flex-col space-y-4">
-              <a
-                href="" //community link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition"
+              <a 
+                href="" 
+                className="bg-black text-gradient border-2 border-yellow-500 px-6 py-3 rounded-lg hover:bg-yellow-400 transition font-semibold"
               >
                 Join Our Community
               </a>
-              <a
-                href="" //insta link
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition"
+              <a 
+                href="" 
+                className="bg-black text-gradient border-2 border-yellow-500 px-6 py-3 rounded-lg hover:bg-yellow-400 transition font-semibold"
               >
                 Follow Us on Instagram
               </a>
@@ -180,13 +146,5 @@ const Home = () => {
     </div>
   );
 };
-
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md text-center">
-    <div className="text-purple-600 mb-4 flex justify-center">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </div>
-);
 
 export default Home;

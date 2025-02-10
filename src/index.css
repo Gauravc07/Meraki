@@ -32,6 +32,20 @@
     transform: translateY(0);
   }
 }
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(90deg, #ae8625, #f7ef8a, #d2ac47);
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hover Gradient Text */
+a:hover, .text-gradient:hover {
+  background: linear-gradient(90deg, #ae8625, #f7ef8a, #d2ac47);
+  background-clip: text;
+  color: transparent;
+}
+
 
 .fade-up {
   animation: fadeUp 1s ease-out forwards;

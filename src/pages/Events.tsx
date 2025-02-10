@@ -22,32 +22,34 @@ const Events = () => {
       date: "May 5, 2025",
       location: "Location Pune",
       image: "https://unsplash.com/photos/people-watching-concert-during-night-time-UV3GmG_HEqI",
-      description: "Get The  "
+      description: "Get The "
     }
   ];
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-6 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12">Upcoming Events</h1>
+        <h1 className="text-3xl font-bold text-center mb-12 text-gradient leading-tight">
+          Upcoming Events
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {events.map((event, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={index} className="bg-black rounded-lg shadow-md overflow-hidden border-2 border-yellow-500">
               <img src={event.image} alt={event.title} className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-4">{event.title}</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-gradient">{event.title}</h2>
                 <div className="space-y-3 text-gray-600">
                   <div className="flex items-center">
-                    <Calendar className="h-5 w-5 mr-2 text-purple-600" />
-                    <span>{event.date}</span>
+                    <Calendar className="h-5 w-5 mr-2 text-gradient" />
+                    <span className="text-gradient">{event.date}</span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-2 text-purple-600" />
-                    <span>{event.location}</span>
+                    <MapPin className="h-5 w-5 mr-2 text-gradient" />
+                    <span className="text-gradient">{event.location}</span>
                   </div>
-                  <p className="mt-4">{event.description}</p>
+                  <p className="mt-4 text-gradient">{event.description}</p>
                 </div>
-                <button className="mt-6 bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition">
+                <button className="mt-6 bg-gradient-to-r from-yellow-500 via-orange-400 to-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-gradient-to-r hover:from-yellow-500 hover:via-orange-400 hover:to-yellow-500 transition">
                   Learn More
                 </button>
               </div>
