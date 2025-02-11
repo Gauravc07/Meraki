@@ -8,7 +8,7 @@ const Home = () => {
     <div className="bg-black text-white">
       {/* Hero Section */}
       <div
-        className="relative h-[600px] bg-cover bg-center fade-up"
+        className="relative h-screen bg-cover bg-center fade-up"
         style={{
           backgroundImage:
             'url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80")',
@@ -33,8 +33,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Video Section */}
-      <div className="relative h-[600px] fade-up">
+      {/* Launch Event Video Section - Full Screen */}
+      <div className="relative w-full h-screen fade-up">
         <video 
           className="absolute inset-0 w-full h-full object-cover" 
           autoPlay 
@@ -55,8 +55,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Previous Events Video Section */}
-      <div className="relative h-[600px] fade-up">
+      {/* Previous Events Video Section - Full Screen */}
+      <div className="relative w-full h-screen fade-up">
         <video 
           className="absolute inset-0 w-full h-full object-cover" 
           autoPlay 
@@ -72,7 +72,9 @@ const Home = () => {
             <h1 className="text-5xl font-bold mb-4 text-gradient">
               Relive the Best Moments
             </h1>
-            <p className="text-xl mb-8 text-gradient">Experience the highlights from past events</p>
+            <p className="text-xl mb-8 text-gradient">
+              Experience the highlights from past events
+            </p>
           </div>
         </div>
       </div>
@@ -115,7 +117,7 @@ const Home = () => {
       {/* Pop-up Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50 fade-up">
-          <div className="bg-black border border-yellow-500 rounded-lg p-8 shadow-lg text-center w-[90%] md:w-[400px]">
+          <div className="bg-black border border-yellow-500 rounded-lg p-8 shadow-lg text-center w-[90%] md:w-[400px] relative">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-yellow-500 hover:text-yellow-400 transition"
@@ -128,13 +130,13 @@ const Home = () => {
             <p className="text-white mb-6">Be the chosen ones!</p>
             <div className="flex flex-col space-y-4">
               <a 
-                href="" 
+                href="#" 
                 className="bg-black text-gradient border-2 border-yellow-500 px-6 py-3 rounded-lg hover:bg-yellow-400 transition font-semibold"
               >
                 Join Our Community
               </a>
               <a 
-                href="" 
+                href="#" 
                 className="bg-black text-gradient border-2 border-yellow-500 px-6 py-3 rounded-lg hover:bg-yellow-400 transition font-semibold"
               >
                 Follow Us on Instagram
