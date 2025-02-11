@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 // Import the logo image
-import logo from '../assests/logo.png'; 
+import logo from '../assests/pictures/meraki_logo.png'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
