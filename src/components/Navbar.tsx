@@ -20,7 +20,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center space-x-2">
               <img src={logo} alt="Logo" className="h-8 w-8" />
               <p className="text-sm md:text-2xl font-bold text-gradient">
-                The <span className="text-gradient">M</span>eraki <span className="text-gradient">Nation</span>
+                The <span className="text-gradient">M</span>eraki <span className="text-gradient">Creations</span>
               </p>
             </Link>
           </div>

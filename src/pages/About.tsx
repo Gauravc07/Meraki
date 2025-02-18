@@ -78,15 +78,15 @@ const About = () => {
               style={{ scrollBehavior: "smooth" }}
             >
               {[ 
-                { name: "Devanshu Thite", role: "Member", img: "" },
-                { name: "Prathamesh Joshi", role: "Member", img: "" },
-                { name: "Venky Gaikwad", role: "Member", img: "" },
-                { name: "Kunal Gaikwad", role: "Member", img: "" },
-                { name: "Atharva Shinde", role: "Member", img: "" },
-                { name: "Gaurav Chindhe", role: "Member", img: "" },
-                { name: "Sarthak Shukla", role: "Member", img: "" },
-                { name: "Sidhart Suryavanshi", role: "Member", img: "" },
-                { name: "Arjun Shinde", role: "Member", img: "" },
+                { name: "Prathamesh ", role: "Member", img: "" },
+                { name: "Devanshu ", role: "Member", img: "" },
+                { name: "Kunal ", role: "Member", img: "" },
+                { name: "Gaurav ", role: "Member", img: "" },
+                { name: "Atharva ", role: "Member", img: "" },
+                { name: "Venky ", role: "Member", img: "" },
+                { name: "Sarthak ", role: "Member", img: "" },
+                { name: "Sidh ", role: "Member", img: "" },
+                { name: "Arjun ", role: "Member", img: "" },
               ].map((member, index) => (
                 <div
                   key={index}
